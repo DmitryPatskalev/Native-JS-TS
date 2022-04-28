@@ -8,6 +8,4 @@ test('sum  should be correct', () => {
 		const resultMult = multply(2,5)
 		expect(resultAdd).toBe(3)
 		expect(resultMult).toBe(10)
-
-
 })
