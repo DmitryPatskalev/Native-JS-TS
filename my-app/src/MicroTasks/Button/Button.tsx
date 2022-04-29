@@ -1,18 +1,16 @@
-import {Buffer} from "buffer";
 import React from "react";
 import './style.css'
-import {strict} from "assert";
 
 
-const ButtonValue = (subscriber: string) => {
-		console.log(subscriber)
+const ButtonValue = (name: string) => {
+		console.log(name)
 }
 
 const Button = () => {
-		return <div className='body'>
+		return <div>
 				<ButtonClick name='BUTTON 1' callback={() => ButtonValue('Dima')}/>
 				<ButtonClick name='BUTTON 2' callback={() => ButtonValue('Danik')}/>
-
+				
 		</div>
 }
 export default Button
