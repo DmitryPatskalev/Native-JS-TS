@@ -5,11 +5,12 @@ import MicroTasks from "./MicroTasks/MicroTasks";
 
 
 function App() {
-		return (
-			<div className="App">
-					<MicroTasks/>
-			</div>
-		);
+	 return (
+		 <div className="App">
+				<MicroTasks/>
+				<hr/>
+		 </div>
+	 );
 }
 
 export default App;

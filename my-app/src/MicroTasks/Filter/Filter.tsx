@@ -1,39 +1,38 @@
 import {useState} from "react";
-import Money from "./List";
+import PersonList from "./List";
 
-export type ListMoneyType = 'ALL' | 'RUB' | 'USD'
-const listMoney = [
-	 {id: 1, banknots: 'Dollars', value: 100, number: ' a1234567890'},
-	 {id: 2, banknots: 'Dollars', value: 50, number: ' z1234567890'},
-	 {id: 3, banknots: 'RUBLS', value: 100, number: ' w1234567890'},
-	 {id: 4, banknots: 'Dollars', value: 100, number: ' e1234567890'},
-	 {id: 5, banknots: 'Dollars', value: 50, number: ' c1234567890'},
-	 {id: 6, banknots: 'RUBLS', value: 100, number: ' r1234567890'},
-	 {id: 7, banknots: 'Dollars', value: 50, number: ' x1234567890'},
-	 {id: 8, banknots: 'RUBLS', value: 50, number: ' v1234567890'},
+const ALL: string = 'ALL'
+const MALE: string = 'MALE'
+const FEMALE: string = 'FEMALE'
+
+export type PeopleType = 'ALL' | 'MALE' | 'FEMALE'
+
+
+const family = [
+	 {id: 1, name: 'Dima', age: 37, sex: 'male', city: 'Minsk'},
+	 {id: 2, name: 'Tanya', age: 31, sex: 'female', city: 'Minsk'},
+	 {id: 3, name: 'Danik', age: 7, sex: 'male', city: 'Minsk'},
+	 {id: 4, name: 'Igor', age: 35, sex: 'male', city: 'Lviv'},
+	 {id: 5, name: 'Julia', age: 37, sex: 'female', city: 'Chicago'},
 ]
 
-
-const Filter = () => {
-	 const [money, setMoney] = useState(listMoney)
-	 const [filter, setFilter] = useState('ALL')
-	 let currentMoney = money
-
-	 if (filter === 'RUB') {
-			currentMoney = money.filter(elem => elem.banknots === 'RUBLS')
+const PeopleList = () => {
+	 const [person, setPerson] = useState(family)
+	 const [filter, setFilter] = useState(ALL)
+	 let currentPerson = person
+	 if (filter === MALE) {
+			currentPerson = person.filter(elem => elem.sex === 'male')
 	 }
-	 if (filter === 'USD') {
-			currentMoney = money.filter(elem => elem.banknots === 'Dollars')
+	 if (filter === FEMALE) {
+			currentPerson = person.filter(elem => elem.sex === 'female')
 	 }
-	 const onClickHundler = (name: string) => {
-			setFilter(name)
+	 const onClickHundler = (namePerson: string) => {
+			setFilter(namePerson)
+	 }
 
-	 }
 
 	 return <div>
-			<Money currentMoney={currentMoney} onClickHundler={setFilter}/>
-
+			<PersonList family={currentPerson} onClickHundler={onClickHundler}/>
 	 </div>
-
 }
-export default Filter
+export default PeopleList;
