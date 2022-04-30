@@ -9,6 +9,7 @@ const MicroTasks = () => {
 				<Huk/>
 				<hr/>
 				<Filter/>
+				<hr/>
 		</div>
 }
 export default MicroTasks
