@@ -2,6 +2,7 @@ import React from 'react';
 
 import './App.css';
 import MicroTasks from "./MicroTasks/MicroTasks";
+import Exams from "./Exams/Exams";
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
 		 <div className="App">
 				<MicroTasks/>
 				<hr/>
+				{/*<Exams/>*/}
 		 </div>
 	 );
 }

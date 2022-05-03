@@ -1,6 +1,7 @@
 import Button from "./Button/Button";
 import Huk from "./Huk/Huk";
 import PeopleList from "./Filter/Filter";
+import InputMessage from "./Input/InputMessage";
 
 
 const MicroTasks = () => {
@@ -10,6 +11,8 @@ const MicroTasks = () => {
 			<Huk/>
 			<hr/>
 			<PeopleList/>
+			<hr/>
+			<InputMessage/>
 	 </div>
 }
 export default MicroTasks
