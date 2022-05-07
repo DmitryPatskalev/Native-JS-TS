@@ -8,9 +8,9 @@ import Exams from "./Exams/Exams";
 function App() {
 	 return (
 		 <div className="App">
-				<MicroTasks/>
+				{/*<MicroTasks/>*/}
 				<hr/>
-				{/*<Exams/>*/}
+				<Exams/>
 		 </div>
 	 );
 }

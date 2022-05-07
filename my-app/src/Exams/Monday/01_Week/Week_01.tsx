@@ -1,25 +1,35 @@
-import React from "react";
+import React from 'react-dom'
 
-type UserWalletType = {
-	 title: string
-	 amount: number
-}
-type UserWalletPropsType = {
-	 wallet: UserWalletType
-}
-
-export const UserWallet: React.FC<UserWalletPropsType> = (props) => {
-	 return <div>title: {props.wallet.title}, amount: {props.wallet.amount}</div>
-}
-
-export const UserMoney = () => {
-	 const wallets = [
-			{title: 'bitcoin', amount: 1},
-			{title: '$', amount: 100}
-	 ]
-
+export const VideoHeader = (props: { videoName: string }) => {
 	 return <div>
-			<UserWallet wallet={wallets[0]}/>
-			<UserWallet wallet={wallets[1]}/>
+			😀 {props.videoName}
 	 </div>
+}
+export const VideoContent = (props: { videoContent: string }) => {
+	 return <div>
+			📼 <a href={props.videoContent}>{props.videoContent}</a>
+	 </div>
+}
+export const VideoDescription = (props: { videoDescription: string }) => {
+	 return <div>
+			📑 {props.videoDescription}
+	 </div>
+}
+
+export const YoutubeVideo = (props: any) => {
+	 return <div>
+			<VideoHeader videoName={props.video.title}/>
+			<VideoContent videoContent={props.video.link}/>
+			<VideoDescription videoDescription={props.video.description}/>
+	 </div>
+}
+
+export const App = () => {
+	 const video = {
+			title: 'Samurai way',
+			link: 'https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8',
+			description: 'Best free react-course'
+	 }
+
+	 return <YoutubeVideo video={video}/>
 }
