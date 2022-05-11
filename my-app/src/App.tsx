@@ -10,7 +10,7 @@ function App() {
 		 <div className="App">
 				{/*<MicroTasks/>*/}
 				<hr/>
-				<Exams/>
+				{/*<Exams/>*/}
 		 </div>
 	 );
 }
