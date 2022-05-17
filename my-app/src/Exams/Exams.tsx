@@ -1,10 +1,10 @@
 import React from "react";
-import {UsersList} from "./Monday/03_Week/Week_03";
+import {Notes} from "./Monday/03_Week/Week_03";
 
 
 const Exams = () => {
 	 return <div>
-			<UsersList/>
+			<Notes/>
 	 </div>
 }
 export default Exams

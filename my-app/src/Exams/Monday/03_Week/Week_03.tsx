@@ -1,32 +1,33 @@
-import React, {useState} from 'react';
+import React, {useState, MouseEvent, ChangeEvent} from 'react';
 
 
-type UserType = {
-	 id: number
-	 name: string
-	 age: number
-}
-
-function User(props: UserType) {
+export function Notes() {
+	 const [newNote, setNewNote] = useState<string>("")
+	 const [notes, setNotes] = useState<Array<string>>([])
+	 const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) =>
+		 setNewNote(e.currentTarget.value)
+	 const addNote = () => {
+			setNotes([newNote, ...notes])
+			setNewNote("")
+	 }
 	 return (
-		 <li>Student {props.name}: {props.age} y.o.</li>
+		 <div>
+            <textarea
+							value={newNote}
+							onChange={onChangeHandler}
+							onBlur={addNote}
+						/>
+				<div>
+					 <button
+						 onClick={() => setNewNote('')}
+					 >Clear notes list
+					 </button>
+				</div>
+				<h4>Notes:</h4>
+				<div>
+					 {notes.map(n => <p>{n}</p>)}
+				</div>
+		 </div>
 	 )
 }
 
-export function UsersList() {
-	 const data: Array<UserType> = [
-			{id: 1, name: "Bob", age: 34},
-			{id: 2, name: "Alex", age: 29},
-			{id: 3, name: "Ann", age: 25},
-			{id: 4, name: "John", age: 36},
-	 ]
-	 const [users, setUsers] = useState<Array<UserType>>(data)
-	 return (
-		 <main>
-				<h4>User list:</h4>
-				<ul>
-					 {users.map(u => <User key={u.id} {...u} />)}
-				</ul>
-		 </main>
-	 )
-}
