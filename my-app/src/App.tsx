@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import MicroTasks from "./MicroTasks/MicroTasks";
 import Exams from "./Exams/Exams";
+import StarRating from "./MicroTasks/StarRating/StarRating";
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 				{/*<MicroTasks/>*/}
 				<hr/>
 				{/*<Exams/>*/}
+				<StarRating/>
 		 </div>
 	 );
 }
