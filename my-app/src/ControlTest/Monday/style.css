@@ -1,0 +1,41 @@
+.body {
+    border: 3px solid blue;
+    height: 300px;
+    width: 500px;
+    border-radius: 10px;
+    background-color: yellow;
+}
+
+.subBody {
+    border: 1px solid blue;
+    height: 100px;
+    width: 460px;
+    margin: 20px;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+.count {
+    font-size: 60px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.inc, .reset {
+    margin: 30px;
+    width: 150px;
+    height: 50px;
+    font-size: 40px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: lightblue;
+}
+
+.buttons {
+    border: 1px solid lightblue;
+    height: 100px;
+    width: 460px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: lightgreen;
+}
