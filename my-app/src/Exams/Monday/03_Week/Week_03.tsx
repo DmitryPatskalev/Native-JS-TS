@@ -19,7 +19,7 @@ export function Notes() {
 						/>
 				<div>
 					 <button
-						 onClick={() => setNewNote('')}
+						
 					 >Clear notes list
 					 </button>
 				</div>
