@@ -64,5 +64,4 @@ console.log(students.reduce((a, b) => {
   a.push({...b, scores: b.scores + 10})
   return a
 }, []))
-console.log(students.map(elem => {
-}))
+
