@@ -15,12 +15,12 @@ function App() {
 				{/*<MicroTasks/>*/}
 				{/*<hr/>*/}
 				{/*<Exams/>*/}
-				{/*<StarRating/>*/}
+				<StarRating/>
 				{/*<Counter/>*/}
 
-				<BrowserRouter>
-					 <ReactRouter/>
-				</BrowserRouter>
+				{/*<BrowserRouter>*/}
+				{/*	 <ReactRouter/>*/}
+				{/*</BrowserRouter>*/}
 		 </div>
 	 );
 }
