@@ -10,7 +10,7 @@ const UniversButton = (props: CounterType) => {
 	 const buttonReset = () => {
 			props.counter(0)
 	 }
-	 const incDisabled = props.num === 5
+	 const incDisabled = props.num === 10
 	 const resetDisabled = props.num === 0
 
 	 return <div className='buttons'>

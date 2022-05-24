@@ -8,7 +8,7 @@ export type CounterType = {
 
 const CountInc = (props: CounterType) => {
 	 const colorCount = {
-			color: props.num === 5 ? 'red' : ''
+			color: props.num === 10 ? 'red' : ''
 	 }
 	 return <div>
 			<div className='subBody'>

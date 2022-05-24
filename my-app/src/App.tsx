@@ -1,12 +1,12 @@
 import React from 'react';
-
 import './App.css';
 import MicroTasks from "./MicroTasks/MicroTasks";
 import Exams from "./Exams/Exams";
 import StarRating from "./MicroTasks/StarRating/StarRating";
-import Counter from "./ControlTest/Monday/Counter";
+
 import {BrowserRouter} from "react-router-dom";
 import ReactRouter from "./React_Router_Dom/ReactRouter";
+import Counter from "./ControlTest/Monday/Counter";
 
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
 				{/*<MicroTasks/>*/}
 				{/*<hr/>*/}
 				{/*<Exams/>*/}
-				<StarRating/>
-				{/*<Counter/>*/}
+				{/*<StarRating/>*/}
+				<Counter/>
 
 				{/*<BrowserRouter>*/}
 				{/*	 <ReactRouter/>*/}
