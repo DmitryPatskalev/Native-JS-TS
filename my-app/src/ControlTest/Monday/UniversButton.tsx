@@ -1,21 +1,18 @@
 import React from "react";
-import {CounterType} from "./CountInc";
+import './style.css'
+import {ButtonsCounterType} from "./ButtonsCounter";
 
 
-const UniversButton = (props: CounterType) => {
-	 const buttonInc = () => {
-			props.counter(props.num + 1)
-	 }
+export const SuperButton = (props: ButtonsCounterType) => {
 
-	 const buttonReset = () => {
-			props.counter(0)
-	 }
-	 const incDisabled = props.num === 10
-	 const resetDisabled = props.num === 0
+	 const incButton = () => props.counter(props.num + 1)
+	 const resetButton = () => props.counter(0)
 
-	 return <div className='buttons'>
-			<button disabled={incDisabled} className='inc' onClick={buttonInc}>inc</button>
-			<button disabled={resetDisabled} className='reset' onClick={buttonReset}>reset</button>
+	 const incDisable = props.num === 5
+	 const resetDisable = props.num === 0
+
+	 return <div>
+			<button className='inc' disabled={incDisable} onClick={incButton}>inc</button>
+			<button className='reset' disabled={resetDisable} onClick={resetButton}>reset</button>
 	 </div>
 }
-export default UniversButton

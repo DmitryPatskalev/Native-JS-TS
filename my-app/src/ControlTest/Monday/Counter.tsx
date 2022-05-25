@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from "react";
 import './style.css'
-import CountInc from "./CountInc";
+import {ButtonsCounter} from "./ButtonsCounter";
 
 
 const Counter = () => {
-	 const [value, setValue] = useState<number>(0)
+	 const [value, setValue] = useState(0)
 
 	 useEffect(() => {
-			let valueString = localStorage.getItem('valueID')
+			let valueString = localStorage.getItem('valueCount')
 			if (valueString) {
 				 let newValue = JSON.parse(valueString)
 				 setValue(newValue)
@@ -15,13 +15,14 @@ const Counter = () => {
 	 }, [])
 
 	 useEffect(() => {
-			localStorage.setItem('valueID', JSON.stringify(value))
-	 }, [value])
+			localStorage.setItem('valueCount', JSON.stringify(value))
+	 })
 
 
 	 return <div className='body'>
-			<CountInc num={value} counter={setValue}/>
+			<ButtonsCounter num={value} counter={setValue}/>
+
 	 </div>
 
 }
-export default Counter;
+export default Counter
