@@ -19,6 +19,5 @@ export const ButtonsCounter = (props: CounterType) => {
 			<div className='button-border'>
 				 <SuperButton num={props.num} count={props.count} startNum={props.startNum} maxNum={props.maxNum}/>
 			</div>
-
 	 </div>
 }

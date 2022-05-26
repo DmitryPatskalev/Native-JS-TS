@@ -8,7 +8,6 @@ const GlobalCounter = () => {
 	 const [starValue, setStarValue] = useState<number>(0)
 	 const [maxValue, setMaxValue] = useState<number>(1)
 
-
 	 return <div className='container'>
 			<div className='setValueCounter'>
 				 <SetValueCounter

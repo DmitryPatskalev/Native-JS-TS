@@ -12,7 +12,13 @@ export const SuperButton = (props: CounterType) => {
 	 const resetDisable = props.num === props.startNum || props.startNum < 0 || props.maxNum === props.startNum || props.startNum >= props.maxNum
 
 	 return <div>
-			<button className='inc' disabled={incDisable} onClick={incButton}>inc</button>
-			<button className='reset' disabled={resetDisable} onClick={resetButton}>reset</button>
+			<button className='inc'
+							disabled={incDisable}
+							onClick={incButton}>inc
+			</button>
+			<button className='reset'
+							disabled={resetDisable}
+							onClick={resetButton}>reset
+			</button>
 	 </div>
 }

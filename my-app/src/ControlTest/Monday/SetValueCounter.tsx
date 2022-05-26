@@ -29,13 +29,13 @@ export const SetValueCounter = (props: SetValueCounter) => {
 	 // 	localStorage.setItem('valueMax', JSON.stringify(props.maxNum))
 	 // 	localStorage.setItem('valueStart', JSON.stringify(props.startNum))
 	 // })
+
 	 let setLocalStorage = () => {
 			localStorage.setItem('valueMax', JSON.stringify(props.maxNum))
 			localStorage.setItem('valueStart', JSON.stringify(props.startNum))
 	 }
 
 	 let setDisable = props.maxNum < 1 || props.maxNum <= props.startNum || props.startNum < 0
-
 
 	 return <div className='body'>
 			<div className='subBody'>
