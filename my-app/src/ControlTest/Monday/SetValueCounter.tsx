@@ -1,81 +1,58 @@
-import React, {ChangeEvent, useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import './style.css'
+import {Inputs} from "./Inputs";
 
-export const SetValueCounter = () => {
 
-	 const [maxValue, setMaxValue] = useState<number>(1)
-	 const [starValue, setStarValue] = useState<number>(0)
+export type SetValueCounter = {
+	 maxNum: number
+	 setMaxNum: (maxNum: number) => void
+	 startNum: number
+	 setStartNum: (startNum: number) => void
+}
+
+export const SetValueCounter = (props: SetValueCounter) => {
 
 	 useEffect(() => {
 			let valueStringMax = localStorage.getItem('valueMax')
 			let valueStringStart = localStorage.getItem('valueStart')
 			if (valueStringMax) {
 				 let maxValue = JSON.parse(valueStringMax)
-				 setMaxValue(maxValue)
+				 props.setMaxNum(maxValue)
 			}
 			if (valueStringStart) {
 				 let strValue = JSON.parse(valueStringStart)
-				 setStarValue(strValue)
+				 props.setStartNum(strValue)
 			}
 	 }, [])
 
-	 useEffect(() => {
-			localStorage.setItem('valueMax', JSON.stringify(maxValue))
-			localStorage.setItem('valueStart', JSON.stringify(starValue))
-	 })
-
-	 let onChangeMaxValue = (event: ChangeEvent<HTMLInputElement>) => {
-			setMaxValue(Number(event.currentTarget.value))
-	 }
-	 let onChangeStartValue = (event: ChangeEvent<HTMLInputElement>) => {
-			setStarValue(Number(event.currentTarget.value))
-	 }
-
+	 // useEffect(() => {
+	 // 	localStorage.setItem('valueMax', JSON.stringify(props.maxNum))
+	 // 	localStorage.setItem('valueStart', JSON.stringify(props.startNum))
+	 // })
 	 let setLocalStorage = () => {
-			localStorage.setItem('valueMax', JSON.stringify(maxValue))
-			localStorage.setItem('valueStart', JSON.stringify(starValue))
-	 }
-	 const styleStarValue = {
-			backgroundColor: starValue < 0 || starValue >= maxValue ? 'red' : ''
-	 }
-	 const styleMaxValue = {
-			backgroundColor: maxValue <= starValue || maxValue < 1 ? 'red' : ''
+			localStorage.setItem('valueMax', JSON.stringify(props.maxNum))
+			localStorage.setItem('valueStart', JSON.stringify(props.startNum))
 	 }
 
-	 let setDisable = maxValue < 1 || maxValue <= starValue || starValue < 0
+	 let setDisable = props.maxNum < 1 || props.maxNum <= props.startNum || props.startNum < 0
 
 
 	 return <div className='body'>
 			<div className='subBody'>
-				 <div className='titleMax'>
-						<span>max value:</span>
-						<span>
-                <input
-									style={styleMaxValue}
-									value={maxValue}
-									type='number'
-									className='inputMax'
-									onChange={onChangeMaxValue}
-								/>
-        </span>
-				 </div>
-				 <div className='titleStar'>
-						<span>star value:</span>
-						<span>
-                <input
-									style={styleStarValue}
-									value={starValue}
-									type='number'
-									className='inputStar'
-									onChange={onChangeStartValue}
-								/>
-            </span>
-				 </div>
+				 <Inputs
+					 maxNum={props.maxNum}
+					 setMaxNum={props.setMaxNum}
+					 startNum={props.startNum}
+					 setStartNum={props.setStartNum}
+				 />
 			</div>
 			<div className='button-border'>
 				 <div className='set'>
 						<button disabled={setDisable} className='buttonSet' onClick={setLocalStorage}>SET</button>
 				 </div>
 			</div>
+
+			{/*<ButtonSet num={props.num} count={props.count} startNum={props.startNum} maxNum={props.maxNum}/>*/}
+
 	 </div>
 }
