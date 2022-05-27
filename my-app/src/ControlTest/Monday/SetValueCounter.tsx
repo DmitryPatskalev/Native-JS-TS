@@ -12,28 +12,9 @@ export type SetValueCounter = {
 
 export const SetValueCounter = (props: SetValueCounter) => {
 
-	 useEffect(() => {
-			let valueStringMax = localStorage.getItem('valueMax')
-			let valueStringStart = localStorage.getItem('valueStart')
-			if (valueStringMax) {
-				 let maxValue = JSON.parse(valueStringMax)
-				 props.setMaxNum(maxValue)
-			}
-			if (valueStringStart) {
-				 let strValue = JSON.parse(valueStringStart)
-				 props.setStartNum(strValue)
-			}
-	 }, [])
-
-	 // useEffect(() => {
-	 // 	localStorage.setItem('valueMax', JSON.stringify(props.maxNum))
-	 // 	localStorage.setItem('valueStart', JSON.stringify(props.startNum))
-	 // })
-
 	 let setLocalStorage = () => {
-			localStorage.setItem('valueMax', JSON.stringify(props.maxNum))
-			localStorage.setItem('valueStart', JSON.stringify(props.startNum))
-			
+			localStorage.setItem('maxValue', JSON.stringify(props.maxNum))
+			localStorage.setItem('starValue', JSON.stringify(props.startNum))
 	 }
 
 	 let setDisable = props.maxNum < 1 || props.maxNum <= props.startNum || props.startNum < 0
