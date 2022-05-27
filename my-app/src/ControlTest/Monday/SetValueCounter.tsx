@@ -33,6 +33,7 @@ export const SetValueCounter = (props: SetValueCounter) => {
 	 let setLocalStorage = () => {
 			localStorage.setItem('valueMax', JSON.stringify(props.maxNum))
 			localStorage.setItem('valueStart', JSON.stringify(props.startNum))
+			
 	 }
 
 	 let setDisable = props.maxNum < 1 || props.maxNum <= props.startNum || props.startNum < 0

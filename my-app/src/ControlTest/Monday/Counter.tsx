@@ -16,6 +16,7 @@ const Counter = (props: CounterType) => {
 			if (valueString) {
 				 let newValue = JSON.parse(valueString)
 				 props.count(newValue)
+				 localStorage.setItem('valueCount', JSON.stringify(props.num))
 			}
 	 }, [])
 
