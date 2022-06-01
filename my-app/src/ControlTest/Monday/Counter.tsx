@@ -10,8 +10,7 @@ export type CounterType = {
 }
 
 const Counter = (props: CounterType) => {
-
-
+	 
 	 return <div className='body'>
 			<ButtonsCounter num={props.num} count={props.count} startNum={props.startNum} maxNum={props.maxNum}/>
 	 </div>

@@ -3,8 +3,8 @@ import Counter from "./Counter";
 import {SetValueCounter} from "./SetValueCounter";
 import './style.css'
 
-const GlobalCounter = () => {
-	 const [value, setValue] = useState(0)
+const GeneralCounter = () => {
+	 const [value, setValue] = useState<number>(0)
 	 const [starValue, setStarValue] = useState<number>(0)
 	 const [maxValue, setMaxValue] = useState<number>(1)
 
@@ -27,12 +27,15 @@ const GlobalCounter = () => {
 	 }, [])
 	 useEffect(() => {
 			localStorage.setItem('value', JSON.stringify(value))
+			localStorage.setItem('maxValue', JSON.stringify(maxValue))
+			localStorage.setItem('startValue', JSON.stringify(starValue))
 	 })
 
 
 	 return <div className='container'>
 			<div className='setValueCounter'>
 				 <SetValueCounter
+					 count={setValue}
 					 startNum={starValue}
 					 setStartNum={setStarValue}
 					 maxNum={maxValue}
@@ -49,4 +52,4 @@ const GlobalCounter = () => {
 			</div>
 	 </div>
 }
-export default GlobalCounter
+export default GeneralCounter
