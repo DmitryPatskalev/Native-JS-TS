@@ -7,6 +7,7 @@ import StarRating from "./MicroTasks/StarRating/StarRating";
 import {BrowserRouter} from "react-router-dom";
 import ReactRouter from "./React_Router_Dom/ReactRouter";
 import GeneralCounter from "./Counter/FirstVersion/GeneralCounter";
+import {Menu} from "./MicroTasks/ShowHideList/Menu";
 
 
 function App() {
@@ -16,11 +17,12 @@ function App() {
 				{/*<hr/>*/}
 				{/*<Exams/>*/}
 				{/*<StarRating/>*/}
-				<GeneralCounter/>
-
+				{/*<GeneralCounter/>*/}
 				{/*<BrowserRouter>*/}
 				{/*	 <ReactRouter/>*/}
 				{/*</BrowserRouter>*/}
+				<Menu/>
+
 		 </div>
 	 );
 }
