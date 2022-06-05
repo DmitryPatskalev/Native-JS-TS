@@ -6,6 +6,11 @@ import {action} from "@storybook/addon-actions";
 export default {
 	 title: 'OnOff',
 	 component: Switch,
+	 argTypes: {
+			color: {
+				 control: 'color'
+			}
+	 }
 }
 const onClicked = action('clicked')
 

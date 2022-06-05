@@ -5,6 +5,11 @@ import {action} from "@storybook/addon-actions";
 export default {
 	 title: 'Menu',
 	 component: ShowHideList,
+	 argTypes: {
+			color: {
+				 control: 'color'
+			}
+	 }
 }
 
 const callBack = action('clicked')
