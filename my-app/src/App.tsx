@@ -17,11 +17,11 @@ function App() {
 				{/*<hr/>*/}
 				{/*<Exams/>*/}
 				{/*<StarRating/>*/}
-				{/*<GeneralCounter/>*/}
+				<GeneralCounter/>
 				{/*<BrowserRouter>*/}
 				{/*	 <ReactRouter/>*/}
 				{/*</BrowserRouter>*/}
-				<Menu/>
+				{/*<Menu/>*/}
 
 		 </div>
 	 );
