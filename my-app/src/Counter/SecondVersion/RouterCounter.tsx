@@ -35,7 +35,7 @@ const RouterCounter = () => {
 	 return <div className='container'>
 			<div className='setValueCounter'>
 				 <Routes>
-						<Route path='/inputValue'
+						<Route path='/'
 									 element={<SetValueCounter
 										 count={setValue}
 										 startNum={starValue}

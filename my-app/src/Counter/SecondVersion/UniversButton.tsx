@@ -23,7 +23,7 @@ export const UniversButton = (props: CounterType) => {
 							onClick={resetButton}>reset
 			</button>
 			<button>
-				 <NavLink to='/inputValue' className='navSet'>set</NavLink>
+				 <NavLink to='/' className='navSet'>set</NavLink>
 			</button>
 	 </div>
 }

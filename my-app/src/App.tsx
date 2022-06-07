@@ -8,7 +8,8 @@ import {BrowserRouter} from "react-router-dom";
 import ReactRouter from "./React_Router_Dom/ReactRouter";
 import GeneralCounter from "./Counter/FirstVersion/GeneralCounter";
 import {Menu} from "./MicroTasks/ShowHideList/Menu";
-import RouterCounter from "./Counter/SecondVersion/GeneralCounter";
+import RouterCounter from "./Counter/SecondVersion/RouterCounter";
+import Counter from "./Counter/Counter";
 
 
 function App() {
@@ -18,15 +19,17 @@ function App() {
 				{/*<hr/>*/}
 				{/*<Exams/>*/}
 				{/*<StarRating/>*/}
-				{/*<GeneralCounter/>*/}
+
 				{/*<BrowserRouter>*/}
 				{/*	 <ReactRouter/>*/}
 				{/*</BrowserRouter>*/}
 				{/*<Menu/>*/}
-				<BrowserRouter>
-					 <RouterCounter/>
-				</BrowserRouter>
-				
+
+				<GeneralCounter/>
+				{/*<BrowserRouter>*/}
+				{/*	 <RouterCounter/>*/}
+				{/*</BrowserRouter>*/}
+
 		 </div>
 	 );
 }
