@@ -48,14 +48,14 @@ const RouterCounter = () => {
 			</div>
 			<div className='counter'>
 				 <Routes>
-						<Route path='/count' element={<Counter
-							num={value}
-							count={setValue}
-							startNum={starValue}
-							maxNum={maxValue}
-						/>}/>
+						<Route path='/count'
+									 element={<Counter
+										 num={value}
+										 count={setValue}
+										 startNum={starValue}
+										 maxNum={maxValue}
+									 />}/>
 				 </Routes>
-
 			</div>
 	 </div>
 }

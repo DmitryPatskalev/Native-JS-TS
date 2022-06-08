@@ -13,7 +13,7 @@ const Counter = () => {
 			</div>
 			<Routes>
 				 <Route path={'/firstVersion'} element={<GeneralCounter/>}/>
-				 <Route path={'/secondVersion'} element={<RouterCounter/>}/>
+				 <Route path={'/secondVersion/*'} element={<RouterCounter/>}/>
 			</Routes>
 
 

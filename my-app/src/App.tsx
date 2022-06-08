@@ -26,9 +26,14 @@ function App() {
 				{/*<Menu/>*/}
 
 				{/*<GeneralCounter/>*/}
+				{/*<BrowserRouter>*/}
+				{/*	 <RouterCounter/>*/}
+				{/*</BrowserRouter>*/}
+
 				<BrowserRouter>
-					 <RouterCounter/>
+					 <Counter/>
 				</BrowserRouter>
+
 
 		 </div>
 	 );
