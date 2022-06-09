@@ -6,14 +6,14 @@ import RouterCounter from "./SecondVersion/RouterCounter";
 const Counter = () => {
 	 return <div>
 			<div>
-				 {/*<NavLink to={'/firstVersion'}>First Version</NavLink>*/}
+				 <NavLink to={'/firstVersion'}>First Version</NavLink>
 			</div>
 			<div>
-				 <NavLink to={'/'}>Second Version</NavLink>
+				 <NavLink to={'/secondVersion'}>Second Version</NavLink>
 			</div>
 			<Routes>
-				 {/*<Route path={'/firstVersion'} element={<GeneralCounter/>}/>*/}
-				 <Route path={'/'} element={<RouterCounter/>}/>
+				 <Route path={'/firstVersion'} element={<GeneralCounter/>}/>
+				 <Route path={'/secondVersion'} element={<RouterCounter/>}/>
 			</Routes>
 
 
