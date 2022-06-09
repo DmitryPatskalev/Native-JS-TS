@@ -41,8 +41,7 @@ const RouterCounter = () => {
 										 startNum={starValue}
 										 setStartNum={setStarValue}
 										 maxNum={maxValue}
-										 setMaxNum={setMaxValue}
-									 />}
+										 setMaxNum={setMaxValue}/>}
 						/>
 				 </Routes>
 			</div>

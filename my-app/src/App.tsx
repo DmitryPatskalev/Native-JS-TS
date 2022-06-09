@@ -23,16 +23,18 @@ function App() {
 				{/*<BrowserRouter>*/}
 				{/*	 <ReactRouter/>*/}
 				{/*</BrowserRouter>*/}
+
 				{/*<Menu/>*/}
 
-				{/*<GeneralCounter/>*/}
-				{/*<BrowserRouter>*/}
-				{/*	 <RouterCounter/>*/}
-				{/*</BrowserRouter>*/}
+				<GeneralCounter/>
 
 				<BrowserRouter>
-					 <Counter/>
+					 <RouterCounter/>
 				</BrowserRouter>
+
+				{/*<BrowserRouter>*/}
+				{/*	 <Counter/>*/}
+				{/*</BrowserRouter>*/}
 
 
 		 </div>
