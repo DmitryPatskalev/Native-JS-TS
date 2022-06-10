@@ -15,7 +15,7 @@ import Counter from "./Counter/Counter";
 function App() {
 	 return (
 		 <div className="App">
-				{/*<MicroTasks/>*/}
+				<MicroTasks/>
 				{/*<hr/>*/}
 				{/*<Exams/>*/}
 				{/*<StarRating/>*/}
@@ -28,9 +28,9 @@ function App() {
 
 				{/*<GeneralCounter/>*/}
 
-				<BrowserRouter>
-					 <RouterCounter/>
-				</BrowserRouter>
+				{/*<BrowserRouter>*/}
+				{/*	 <RouterCounter/>*/}
+				{/*</BrowserRouter>*/}
 
 				{/*<BrowserRouter>*/}
 				{/*	 <Counter/>*/}

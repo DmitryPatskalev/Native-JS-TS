@@ -3,6 +3,7 @@ import Huk from "./Huk/Huk";
 import PeopleList from "./Filter/Filter";
 import InputMessage from "./Input/InputMessage";
 import Map from "../05_Map/Map";
+import {Select} from "./Select/Select";
 
 
 const MicroTasks = () => {
@@ -16,6 +17,8 @@ const MicroTasks = () => {
 			<InputMessage/>
 			<hr/>
 			<Map/>
+			<hr/>
+
 	 </div>
 }
 export default MicroTasks
