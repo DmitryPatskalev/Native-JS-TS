@@ -27,7 +27,6 @@ export const ShowHideList = (props: ListPerson) => {
 						<li>
 							 name:{elem.name}---
 							 age:{elem.age}
-							 <button>x</button>
 						</li>
 				 </ul>
 			})
