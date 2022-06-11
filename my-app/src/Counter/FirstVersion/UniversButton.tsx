@@ -1,8 +1,17 @@
 import React from "react";
 import './style.css'
 import {CounterType} from "./Counter";
+import {Button} from "@material-ui/core";
 
 export const UniversButton = (props: CounterType) => {
+
+	 const styleButton = {
+			margin: '8px',
+			width: '100px',
+			height: '40px',
+			fontSize: '20px',
+			fontFamily: 'Neucha,cursive'
+	 }
 
 	 const incButton = () => props.count(props.num + 1)
 	 const resetButton = () => props.count(props.startNum)
@@ -13,13 +22,19 @@ export const UniversButton = (props: CounterType) => {
 		 || props.maxNum === props.startNum || props.startNum >= props.maxNum
 
 	 return <div>
-			<button className='inc'
-							disabled={incDisable}
-							onClick={incButton}>inc
-			</button>
-			<button className='reset'
-							disabled={resetDisable}
-							onClick={resetButton}>reset
-			</button>
+			<Button
+				variant={'contained'}
+				color='primary'
+				style={styleButton}
+				disabled={incDisable}
+				onClick={incButton}>inc
+			</Button>
+			<Button
+				variant={'contained'}
+				color='secondary'
+				style={styleButton}
+				disabled={resetDisable}
+				onClick={resetButton}>reset
+			</Button>
 	 </div>
 }

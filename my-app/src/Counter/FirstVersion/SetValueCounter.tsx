@@ -1,5 +1,6 @@
 import React, {ChangeEvent} from "react";
 import './style.css'
+import {Button} from "@material-ui/core";
 
 export type SetValueCounter = {
 	 count: (num: number) => void
@@ -26,6 +27,13 @@ export const SetValueCounter = (props: SetValueCounter) => {
 	 const setDisable = props.maxNum < 1 || props.maxNum <= props.startNum || props.startNum < 0
 	 const onSetValueCounter = () => {
 			props.count(props.startNum)
+	 }
+	 const styleButton = {
+			margin: '8px',
+			width: '100px',
+			height: '40px',
+			fontSize: '20px',
+			fontFamily: 'Neucha,cursive'
 	 }
 
 
@@ -54,7 +62,11 @@ export const SetValueCounter = (props: SetValueCounter) => {
 			</div>
 			<div className='button-border'>
 				 <div className='set'>
-						<button disabled={setDisable} className='buttonSet' onClick={onSetValueCounter}>SET</button>
+						<Button variant="contained"
+										disabled={setDisable}
+										color='primary'
+										style={styleButton}
+										onClick={onSetValueCounter}>SET</Button>
 				 </div>
 			</div>
 	 </div>
