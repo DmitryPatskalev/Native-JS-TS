@@ -26,7 +26,7 @@ function App() {
 
 				{/*<Menu/>*/}
 
-				{/*<GeneralCounter/>*/}
+				<GeneralCounter/>
 
 				{/*<BrowserRouter>*/}
 				{/*	 <RouterCounter/>*/}

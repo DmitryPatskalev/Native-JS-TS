@@ -5,7 +5,7 @@ import './style.css'
 
 const GeneralCounter = () => {
 	 const [value, setValue] = useState<number>(0)
-	 const [starValue, setStarValue] = useState<number>(0)
+	 const [startValue, setStartValue] = useState<number>(0)
 	 const [maxValue, setMaxValue] = useState<number>(1)
 
 	 useEffect(() => {
@@ -22,13 +22,13 @@ const GeneralCounter = () => {
 			}
 			if (valueStringStart) {
 				 let strValue = JSON.parse(valueStringStart)
-				 setStarValue(strValue)
+				 setStartValue(strValue)
 			}
 	 }, [])
 	 useEffect(() => {
 			localStorage.setItem('value', JSON.stringify(value))
 			localStorage.setItem('maxValue', JSON.stringify(maxValue))
-			localStorage.setItem('startValue', JSON.stringify(starValue))
+			localStorage.setItem('startValue', JSON.stringify(startValue))
 	 })
 
 
@@ -36,8 +36,8 @@ const GeneralCounter = () => {
 			<div className='setValueCounter'>
 				 <SetValueCounter
 					 count={setValue}
-					 startNum={starValue}
-					 setStartNum={setStarValue}
+					 startNum={startValue}
+					 setStartNum={setStartValue}
 					 maxNum={maxValue}
 					 setMaxNum={setMaxValue}
 				 />
@@ -46,7 +46,7 @@ const GeneralCounter = () => {
 				 <Counter
 					 num={value}
 					 count={setValue}
-					 startNum={starValue}
+					 startNum={startValue}
 					 maxNum={maxValue}
 				 />
 			</div>
