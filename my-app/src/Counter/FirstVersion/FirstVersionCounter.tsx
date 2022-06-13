@@ -3,7 +3,7 @@ import Counter from "./Counter";
 import {SetValueCounter} from "./SetValueCounter";
 import './style.css'
 
-const GeneralCounter = () => {
+const FirstVersionCounter = () => {
 	 const [value, setValue] = useState<number>(0)
 	 const [startValue, setStartValue] = useState<number>(0)
 	 const [maxValue, setMaxValue] = useState<number>(1)
@@ -52,4 +52,4 @@ const GeneralCounter = () => {
 			</div>
 	 </div>
 }
-export default GeneralCounter
+export default FirstVersionCounter

@@ -1,6 +1,6 @@
 import React, {ChangeEvent} from "react";
 import './style.css'
-import {NavLink} from "react-router-dom";
+import {Button} from "@material-ui/core";
 
 export type SetValueCounter = {
 	 count: (num: number) => void
@@ -8,6 +8,7 @@ export type SetValueCounter = {
 	 setMaxNum: (maxNum: number) => void
 	 startNum: number
 	 setStartNum: (startNum: number) => void
+	 setIsSettingsOpen: (value: boolean) => void
 }
 
 export const SetValueCounter = (props: SetValueCounter) => {
@@ -27,6 +28,14 @@ export const SetValueCounter = (props: SetValueCounter) => {
 	 const setDisable = props.maxNum < 1 || props.maxNum <= props.startNum || props.startNum < 0
 	 const onSetValueCounter = () => {
 			props.count(props.startNum)
+			props.setIsSettingsOpen(false)
+	 }
+	 const styleButton = {
+			margin: '8px',
+			width: '100px',
+			height: '40px',
+			fontSize: '20px',
+			fontFamily: 'Neucha,cursive',
 	 }
 
 
@@ -55,9 +64,12 @@ export const SetValueCounter = (props: SetValueCounter) => {
 			</div>
 			<div className='button-border'>
 				 <div className='set'>
-						<NavLink to='/count'>
-							 <button disabled={setDisable} className='buttonSet' onClick={onSetValueCounter}>SET</button>
-						</NavLink>
+						<Button
+							variant="contained"
+							disabled={setDisable}
+							style={styleButton}
+							color='primary'
+							onClick={onSetValueCounter}>SET</Button>
 				 </div>
 			</div>
 	 </div>

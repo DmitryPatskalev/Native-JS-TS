@@ -1,19 +1,35 @@
 import React from "react";
 import {NavLink, Route, Routes} from "react-router-dom";
-import GeneralCounter from "./FirstVersion/GeneralCounter";
-import RouterCounter from "./SecondVersion/RouterCounter";
+import FirstVersionCounter from "./FirstVersion/FirstVersionCounter";
+import SecondVersionCounter from "./SecondVersion/SecondVersionCounter";
+import {Button} from "@material-ui/core";
+import './../Counter/SecondVersion/style.css'
 
 const Counter = () => {
-	 return <div>
-			<div>
-				 <NavLink to={'/firstVersion'}>First Version</NavLink>
-			</div>
-			<div>
-				 <NavLink to={'/secondVersion'}>Second Version</NavLink>
-			</div>
+	 return <div className='linkButton'>
+			<span>
+				 <NavLink to={'/firstVersion'}
+									className='link'>
+						<Button
+							color='secondary'
+							variant='contained'>
+							 First Version
+						</Button>
+				 </NavLink>
+			</span>
+			<span>
+				 <NavLink to={'/secondVersion'}
+									className='link'>
+						<Button
+							color='primary'
+							variant='contained'>
+							 Second Version
+						</Button>
+				 </NavLink>
+			</span>
 			<Routes>
-				 <Route path={'/firstVersion'} element={<GeneralCounter/>}/>
-				 <Route path={'/secondVersion'} element={<RouterCounter/>}/>
+				 <Route path={'/firstVersion'} element={<FirstVersionCounter/>}/>
+				 <Route path={'/secondVersion'} element={<SecondVersionCounter/>}/>
 			</Routes>
 
 

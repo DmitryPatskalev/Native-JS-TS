@@ -1,7 +1,7 @@
 import React from "react";
 import './style.css'
 import {CounterType} from "./Counter";
-import {NavLink} from "react-router-dom";
+import {Button} from "@material-ui/core";
 
 export const UniversButton = (props: CounterType) => {
 
@@ -13,17 +13,39 @@ export const UniversButton = (props: CounterType) => {
 	 const resetDisable = props.num === props.startNum || props.startNum < 0
 		 || props.maxNum === props.startNum || props.startNum >= props.maxNum
 
+	 const styleButton = {
+			margin: '8px',
+			width: '100px',
+			height: '40px',
+			fontSize: '20px',
+			fontFamily: 'Neucha,cursive',
+	 }
+
+	 const onSetClick = () => props.setIsSettingsOpen(true)
+
 	 return <div>
-			<button className='inc'
-							disabled={incDisable}
-							onClick={incButton}>inc
-			</button>
-			<button className='reset'
-							disabled={resetDisable}
-							onClick={resetButton}>reset
-			</button>
-			<button>
-				 <NavLink to='/' className='navSet'>set</NavLink>
-			</button>
+			<Button
+				variant='contained'
+				color='primary'
+				style={styleButton}
+				disabled={incDisable}
+				onClick={incButton}>inc
+			</Button>
+
+			<Button
+				variant='contained'
+				color='secondary'
+				style={styleButton}
+				disabled={resetDisable}
+				onClick={resetButton}>reset
+			</Button>
+			
+			<Button
+				variant='contained'
+				color='inherit'
+				style={styleButton}
+				onClick={onSetClick}
+			>set
+			</Button>
 	 </div>
 }

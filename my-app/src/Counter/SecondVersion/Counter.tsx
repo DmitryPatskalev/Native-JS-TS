@@ -8,6 +8,7 @@ export type CounterType = {
 	 count: (num: number) => void
 	 startNum: number
 	 maxNum: number
+	 setIsSettingsOpen: (value: boolean) => void
 }
 
 const Counter = (props: CounterType) => {
@@ -25,7 +26,8 @@ const Counter = (props: CounterType) => {
 				 </div>
 			</div>
 			<div className='button-border'>
-				 <UniversButton num={props.num} count={props.count} startNum={props.startNum} maxNum={props.maxNum}/>
+				 <UniversButton num={props.num} count={props.count} startNum={props.startNum} maxNum={props.maxNum}
+												setIsSettingsOpen={props.setIsSettingsOpen}/>
 			</div>
 	 </div>
 
