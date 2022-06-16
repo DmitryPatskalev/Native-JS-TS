@@ -11,9 +11,9 @@ const SecondVersionCounter = () => {
 	 const [maxValue, setMaxValue] = useState<number>(1)
 
 	 useEffect(() => {
-			let valueString = localStorage.getItem('value')
-			let valueStringMax = localStorage.getItem('maxValue')
-			let valueStringStart = localStorage.getItem('startValue')
+			let valueString = localStorage.getItem('count')
+			let valueStringMax = localStorage.getItem('max')
+			let valueStringStart = localStorage.getItem('start')
 			if (valueString) {
 				 let newValue = JSON.parse(valueString)
 				 setValue(newValue)
@@ -28,9 +28,9 @@ const SecondVersionCounter = () => {
 			}
 	 }, [])
 	 useEffect(() => {
-			localStorage.setItem('value', JSON.stringify(value))
-			localStorage.setItem('maxValue', JSON.stringify(maxValue))
-			localStorage.setItem('startValue', JSON.stringify(starValue))
+			localStorage.setItem('count', JSON.stringify(value))
+			localStorage.setItem('max', JSON.stringify(maxValue))
+			localStorage.setItem('start', JSON.stringify(starValue))
 	 })
 
 	 return <div className='container'>

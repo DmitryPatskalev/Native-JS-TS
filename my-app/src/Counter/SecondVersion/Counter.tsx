@@ -30,6 +30,6 @@ const Counter = (props: CounterType) => {
 												setIsSettingsOpen={props.setIsSettingsOpen}/>
 			</div>
 	 </div>
-
 }
+
 export default Counter
