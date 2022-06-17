@@ -31,16 +31,16 @@ export function getTriangleType(a: number, b: number, c: number): string {
 	 if (a === b && a !== c && b !== c) {
 			return '01'
 	 }
-	 if (a !== b && b !== c && a !== c) {
-			return '11'
-	 } else {
+	 if (a + b < c || a + c < b || c + b < a) {
 			return '00'
+	 } else {
+			return '11'
 	 }
-
-
-	 //...здесь пишем код.
-	 // В return стоит "заглушка", чтоб typescript не ругался
 }
+
+
+//...здесь пишем код.
+// В return стоит "заглушка", чтоб typescript не ругался
 
 
 // 3. Функция getSum принимает параметром целое число и возвращает
