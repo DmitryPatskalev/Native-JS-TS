@@ -1,13 +1,16 @@
+/* этот стиль под основную компоненту которая у тебя будет отрисовываться в App */
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 500px;
     margin: 20px;
 }
 
+/* этот стиль под компоненты, первая - это где будут импуты, чтобы установить счетчик, вторая сам счетчик с числом */
 .setValueCounter, .counter {
     margin: 20px;
 }
 
+/* этот стиль под внешние границы border */
 .body {
     border: 3px solid blue;
     width: 460px;
@@ -16,6 +19,7 @@
     background-color: aliceblue;
 }
 
+/* этот стиль под вложенный border инпутов */
 .subBody {
     border: 1px solid blue;
     width: 420px;
@@ -25,6 +29,7 @@
     background-color: lightgray;
 }
 
+/* этот стиль под border где будут кнопки*/
 .button-border {
     border: 1px solid blue;
     width: 420px;
@@ -35,6 +40,7 @@
     background-color: lightgreen;
 }
 
+/* это под кнопки */
 .inc, .reset, .buttonSet {
     width: 140px;
     height: 40px;
@@ -43,6 +49,7 @@
     /*border-radius: 10px;*/
 }
 
+/* этот стиль под цифру которая будет отображаться при подсчете */
 .count {
     font-size: 80px;
     text-align: center;
@@ -50,6 +57,7 @@
     font-family: 'Neucha', cursive;
 }
 
+/* этот стиль под названия импутов */
 .titleMax, .titleStar {
     font-size: 30px;
     margin: 20px;
@@ -58,6 +66,7 @@
 
 }
 
+/* этот стиль под импуты где будут установки счетчика */
 .inputMax, .inputStar {
     text-align: center;
     height: 25px;
@@ -76,6 +85,7 @@
     margin-left: 105px;
 }
 
+/* этот стиль под ошибку */
 .errorValue {
     font-size: 40px;
     color: red;

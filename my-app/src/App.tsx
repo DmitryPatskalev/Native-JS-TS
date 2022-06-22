@@ -27,9 +27,9 @@ function App() {
 				{/*<Menu/>*/}
 
 
-				<BrowserRouter>
-					 <Counter/>
-				</BrowserRouter>
+				{/*<BrowserRouter>*/}
+				{/*	 <Counter/>*/}
+				{/*</BrowserRouter>*/}
 
 
 		 </div>
