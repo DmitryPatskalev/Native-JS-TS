@@ -1,40 +1,30 @@
-type Status = 'Stopped' | 'Playing' | 'Paused'
-type StateType = {
-	 volume: number // in percents
-	 trackUrl: string // 'https://blabla.com/track01.mp3',
-	 currentPlayPosition: number // milliseconds,
-	 status: Status
-}
-export const playerReducer = (state: StateType, action: any) => {
+import exp from "constants";
+
+export const reducer = (state: any, action: any) => {
 	 switch (action.type) {
-			case 'TRACK-VOLUME-CHANGED':
+			case 'TRACK-LIKED':
 				 return {
 						...state,
-						volume: 20
+						[action.trackId]: {
+							 ...state[action.trackId],
+							 likesCount: state[action.trackId].likesCount + 1
+						}
 				 }
 			default:
 				 return state
 	 }
 }
-
-
 test('test', () => {
+	 const likeTrackAC = (trackId: number) => ({type: 'TRACK-LIKED', trackId})
 
 
-	 const muteTrackAC = () => ({type: 'TRACK-MUTED'})
-	 const changeVolumeAC = (volumeLevel: number) => ({type: 'TRACK-VOLUME-CHANGED', volumeLevel})
-	 const changeTrackAC = (url: string) => ({type: 'TRACK-URL-CHANGED', url})
-	 const changeTrackPlayStatusAC = (status: Status) => ({type: 'TRACK-STATUS-CHANGED', status})
-
-	 const state: StateType = {
-			status: 'Stopped',
-			currentPlayPosition: 1213,
-			trackUrl: 'https://blabla.com/track01.mp3',
-			volume: 100
+	 const state = {
+			12: {id: 12, likesCount: 10},
+			14: {id: 14, likesCount: 2},
+			100: {id: 100, likesCount: 0},
 	 }
-	 const newState = playerReducer(state, changeVolumeAC(20))
-	 expect(newState.volume).toBe(20)
-	 console.log(newState.volume === 20)
+	 const newState = reducer(state, likeTrackAC(14))
+	 expect(newState[14].likesCount).toBe(3)
 
 })
 
