@@ -17,7 +17,7 @@ function App() {
 		 <div className="App">
 				{/*<MicroTasks/>*/}
 				{/*<hr/>*/}
-				{/*<Exams/>*/}
+				<Exams/>
 				{/*<StarRating/>*/}
 
 				{/*<BrowserRouter>*/}
@@ -27,9 +27,9 @@ function App() {
 				{/*<Menu/>*/}
 
 
-				<BrowserRouter>
-					 <Counter/>
-				</BrowserRouter>
+				{/*<BrowserRouter>*/}
+				{/*	 <Counter/>*/}
+				{/*</BrowserRouter>*/}
 
 
 		 </div>
