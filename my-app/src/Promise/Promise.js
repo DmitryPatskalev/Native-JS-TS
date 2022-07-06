@@ -1,19 +1,25 @@
-let num = Array(1).fill().map(() => Math.floor(Math.random() * 6))
-let promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    if (num[0] % 2 === 0) {
-      resolve(num)
-    } else {
-      reject('Error')
-    }
-  }, 2000)
+let obj = [
+  {id: 1, name: 'Dima'},
+  {id: 2, name: 'Tania'},
+  {id: 3, name: 'Danik'},
+]
+const findUsers = (id) => {
+  return obj.filter(elem => elem.id === id)
+}
+
+const promise = new Promise((resolve) => {
+  resolve(findUsers(1))
+
 })
-promise.then(
-  function (result) {
-    console.log(result); // выведет результат промиса
-  },
-  function (error) {
-    console.log(error);  // выведет текст ошибки
-  }
-);
+promise
+  .then((users) => {
+    console.log(promise)
+    console.log(users)
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+  .finally(() => {
+    console.log('finish')
+  })
 
