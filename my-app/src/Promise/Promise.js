@@ -1,24 +1,19 @@
-// console.log('Request data')
-// setTimeout(() => {
-//   console.log('Preparing data...')
-//   const backendData = {
-//     server: 'aws',
-//     port: 2000,
-//     status: 'working'
-//   }
-//   setTimeout(() => {
-//     backendData.modified = true
-//     console.log('Data reccived', backendData)
-//   }, 2000)
-// }, 2000)
-
-const promise = new Promise((resolve, reject) => {
+let num = Array(1).fill().map(() => Math.floor(Math.random() * 6))
+let promise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    console.log('Preparing data...')
-    const backendData = {
-      server: 'aws',
-      port: 2000,
-      status: 'working'
+    if (num[0] % 2 === 0) {
+      resolve(num)
+    } else {
+      reject('Error')
     }
   }, 2000)
 })
+promise.then(
+  function (result) {
+    console.log(result); // выведет результат промиса
+  },
+  function (error) {
+    console.log(error);  // выведет текст ошибки
+  }
+);
+
