@@ -50,9 +50,31 @@
 //   })
 
 const getNumber = () => {
-  const promise = Promise.resolve(Math.random())
-  return promise
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(Math.random())
+    }, 2000)
+  })
+
 }
 getNumber().then(n => console.log(n))
 getNumber().then(n => console.log(n))
 
+function wait(ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      (resolve())
+    }, ms)
+  })
+}
+
+async function run() {
+  await wait(1000)
+  console.log(1)
+  await wait(2000)
+  console.log(2)
+  await wait(3000)
+  console.log(3)
+}
+
+run()
