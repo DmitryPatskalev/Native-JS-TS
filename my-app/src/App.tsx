@@ -10,6 +10,7 @@ import ReactRouter from "./React_Router_Dom/ReactRouter";
 import {Menu} from "./MicroTasks/ShowHideList/Menu";
 
 import Counter from "./Counter/Counter";
+import TraningReact from "./TraningReact/TraningReact";
 
 
 function App() {
@@ -25,11 +26,12 @@ function App() {
 				{/*</BrowserRouter>*/}
 
 				{/*<Menu/>*/}
+				<TraningReact/>
 
 
-				<BrowserRouter>
-					 <Counter/>
-				</BrowserRouter>
+				{/*<BrowserRouter>*/}
+				{/*	 <Counter/>*/}
+				{/*</BrowserRouter>*/}
 
 
 		 </div>
