@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import FormTrain from "./Form";
+
 
 const State = () => {
 	 const [name, setName] = useState('prod')
@@ -75,6 +77,8 @@ const State = () => {
 					 <p>C/F: {degree}</p>
 					 <p>(Input1 + Input2)/2 = {(Number(input) + Number(input2)) / 2}</p>
 				</div>
+				<hr/>
+				<FormTrain/>
 
 		 </div>
 	 );
