@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 import FormTrain from "./Form";
+import CheckBox from "./CheckBox";
+import Select from "./Select";
+import Radio from "./Radio";
 
 
 const State = () => {
@@ -79,6 +82,12 @@ const State = () => {
 				</div>
 				<hr/>
 				<FormTrain/>
+				<hr/>
+				<CheckBox/>
+				<hr/>
+				<Select/>
+				<hr/>
+				<Radio/>
 
 		 </div>
 	 );
