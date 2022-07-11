@@ -12,6 +12,9 @@ const State = () => {
 	 const [buttonBan, setButton] = useState(false)
 	 const [age, setAge] = useState(0)
 
+	 const [input, setInput] = useState('')
+	 const [input2, setInput2] = useState('')
+
 
 	 const onClickHundler = () => {
 			setInCart(!inCart)
@@ -32,6 +35,14 @@ const State = () => {
 	 const bunButton = () => {
 			setButton(!buttonBan)
 	 }
+	 const changeHundlerInput = (e: any) => {
+			setInput(e.target.value)
+	 }
+	 const changeHundlerInput2 = (e: any) => {
+			setInput2(e.target.value)
+	 }
+	 const data = new Date()
+	 const degree = (Number(input2) - 32) * 5 / 9
 
 
 	 return (
@@ -54,6 +65,17 @@ const State = () => {
 				<button disabled={age === 10} onClick={() => setAge(age + 1)}>Age +</button>
 				<span>{age}</span>
 				<button disabled={age === 0} onClick={() => setAge(age - 1)}>Age -</button>
+				<hr/>
+				<input onChange={changeHundlerInput} type="text"/>
+				<input onChange={changeHundlerInput2} type="text"/>
+				<div>
+					 <p>{input}</p>
+					 <p>Date, when you were born:{data.getFullYear() - Number(input2)}</p>
+					 <p>Input1 + Input2 = {Number(input) + Number(input2)}</p>
+					 <p>C/F: {degree}</p>
+					 <p>(Input1 + Input2)/2 = {(Number(input) + Number(input2)) / 2}</p>
+				</div>
+
 		 </div>
 	 );
 };
