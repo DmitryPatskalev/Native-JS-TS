@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {v1} from "uuid";
 
 type ReactivsType = {
@@ -25,6 +25,12 @@ const Reactivs = () => {
 	 const onChangeHundler = (e: ChangeEvent<HTMLInputElement>) => {
 			setNewTask(e.currentTarget.value)
 	 }
+	 const onKeyHundler = (e: KeyboardEvent<HTMLInputElement>) => {
+			if (e.charCode === 13) {
+				 addNewTitle(newTask)
+			}
+	 }
+
 	 const addNewTitle = (title: string) => {
 			let addTask = {
 				 id: v1(),
@@ -37,7 +43,7 @@ const Reactivs = () => {
 	 return (
 		 <div>
 				{result}
-				<input onChange={onChangeHundler}/>
+				<input onKeyPress={onKeyHundler} onChange={onChangeHundler}/>
 				<button onClick={() => addNewTitle(newTask)}>Add new Title</button>
 		 </div>
 	 );
