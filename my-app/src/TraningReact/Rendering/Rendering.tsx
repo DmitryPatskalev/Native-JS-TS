@@ -53,8 +53,7 @@ const Rendering = () => {
 				 {desc}
 			</p>
 	 })
-
-
+	 
 	 let elem;
 	 if (visible) {
 			elem = <p>Showed</p>
