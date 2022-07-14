@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+  // let myPromise = new Promise((resolve) => {
+  //   setTimeout(() => {
+  //     resolve(Math.random())
+  //   }, 2000)
+  //
+  // })
+  // myPromise
+  //   .then((res) => {
+  //     console.log('My promise is resolved and I have known about it: ' + res)
+  //   })
+  // console.log(myPromise)
+
+  const doAfter = (second) => {
+    return new Promise((resolve, reject) => {
+      const randValue = Math.random()
+      setTimeout(() => {
+        if (randValue > 0.5) {
+          resolve(randValue)
+        } else {
+          reject(randValue)
+        }
+      }, second * 1000)
+    })
+  }
+
+
+  // doAfter(4).then(() => console.log('я сработал через 4 секунды'));
+  // doAfter(2).then(() => console.log('а я сработал через 2 секунды'));
+  // doAfter(5).then(() => console.log('я сработал через 5 секунд'));
+
+
+  let pr1 = doAfter(1);
+  pr1
+    .then(n => {
+      console.log(n)
+      return n * 1000
+    })
+    .then(n => {
+      console.log(n)
+      return n * 1000
+    })
+    .then(n => {
+      console.log(n)
+      return n * 1000
+    })
+
+
+  // let pr2 = pr1.then((n) => {
+  //   console.log('pr1: ' + n)
+  //   return n * 1000
+  // })
+  // let pr3 = pr2.then((n) => {
+  //   console.log('pr2: ' + n)
+  //   return n * 1000
+  // })
+  // let pr4 = pr3.then((n) => {
+  //   console.log('pr3: ' + n)
+  // })
+
+
+</script>
+</body>
+</html>
