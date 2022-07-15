@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="axios.js"></script>
+<script src="api.js"></script>
+<script>
+  // const loadVacanciesPromise = () => {
+  //   let msVacancies;
+  //   api.getVacanciesCountFromMicrosoft()
+  //     .then(mSCount => {
+  //       msVacancies = mSCount
+  //       console.log(mSCount)
+  //       return api.getVacanciesCountFromGoogle()
+  //     })
+  //     .then(gCount => {
+  //       console.log(gCount)
+  //       return api.sendStudentsCountToItKamasutra(gCount + msVacancies)
+  //     })
+  //     .then(res => {
+  //       console.log('from it-kamasutra', res.data)
+  //     })
+  // }
+  // loadVacanciesPromise()
+
+  async function loadVacanciesAsyncAwait() {
+    try {
+      let msCount = await api.getVacanciesCountFromMicrosoft()
+      let gCount = await api.getVacanciesCountFromGoogle()
+      let res = await api.sendStudentsCountToItKamasutra(msCount + gCount)
+      console.log('from it-kamasutra', res.data)
+    } catch (error) {
+      console.error('Error')
+    }
+  }
+
+  loadVacanciesAsyncAwait()
+
+</script>
+</body>
+</html>
