@@ -33,7 +33,7 @@
       let res = await api.sendStudentsCountToItKamasutra(msCount + gCount)
       console.log('from it-kamasutra', res.data)
     } catch (error) {
-      console.error('Error')
+      console.log(error)
     }
   }
 
